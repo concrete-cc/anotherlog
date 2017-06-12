@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- node
+deploy:
+  provider: npm
+  email: infrastructure@concreteplatform.com
+  api_key:
+    secure: jMlB32lgo6R+4j58gcW9XGhUJ+AYsehw3Pdmr8ZwM/RiGUT5oexEeAdTxGvi16742//sGXPot9PDFX3+tTpH/wKAbXo3MhBoVuz6OSrnF0NpSlIqUk8nDWERzc04KZY+peR6T/AmEg6OC8ovKhlP1WKaZMpKxSBWON9P+CX6DofmDWEn7dXuLHyuBj/vbG4PuZvdUKB33MYi54mSSwNj5CQ7mCMrtwLV2jINSN903rTGzJF6gaNgypkroU4TnqI5+kJu+IfJ3umwHZfIRgSzMfjyt/3Bd2AU/uGNeMwa5BGHrFCnqxnsaOGP4n2P415T5xZXF+EcIZFvbB9XzQ3TUngWc3wXyqAgphBPIPYJEb27NNBaFgrqQnEw9JWFOSavQO261Vsx7I5xSg4boRygPUMt2ajF7Vyr24EXpkjAdm4JgzD2r83mCb6qGxNgPscB8yJtHTYv3c+uZGa6VfdB5Pj5V4vloA427RsacR1gHWL4hmLuv3nfok/3x8J4zAhzy96eaPhApAKvEcMdUDHFWYIYaK5r1r+Dgu5PYGz3aW/JxZB3nnYluNJrt5EPCLCYUjZubiU8cyD2GT5W7Dv1NjCOIwbKQf2n+A8yp43I93+BusmOx1iaPh4Sb9PCV0p0T/WLbpcxWBEPTIO/+PGFGm9uDHQrv5hyUfujhrHMn/w=
+  on:
+    tags: true
+    repo: concrete-cc/anotherlog
