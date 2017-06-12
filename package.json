@@ -1,0 +1,25 @@
+{
+  "name": "anotherlog",
+  "version": "0.1.0",
+  "description": "Another Node.js logger. Wraps Winston.",
+  "main": "index.js",
+  "author": {
+    "name": "Concrete Media Limited",
+    "url": "http://concrete.cc",
+    "email": "infrastructure@concreteplatform.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/concrete.cc/anotherlog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/concrete-cc/anotherlog/issues"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^20.0.4"
+  },
+  "licence": "MIT"
+}
