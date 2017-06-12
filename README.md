@@ -23,6 +23,29 @@ Then, require the package and use it like so:
     // returns '09089123812 [WARN] (MyService:MyLocalLog) Hello Small World'
 ```
 ## API
+### `anotherlog(name, options={level})`
+Instantiate a logger. Requires a name (i.e the name of the service).
+### `.debug(message, meta)`
+Lowest level of logging. Hidden by default. Set log level to 'debug' to see these. Useful for development.
+### `.info(message, meta)`
+Standard log message. Output to _stdout_
+### `.warn(message, meta)`
+Non critical errors. Output to _stderr_
+### `.error(message, meta)`
+Critical errors. Output to _stderr_
+### `.intercept(data)`
+Debug print data and return. Useful for intercepting promise chains. Requires **debug** level to show.
+```js
+Promise.resolve({one: 'one', two: 'two'})
+  .then(log.intercept) // {"one": "one", "two": "two"}
+  .then(data => data.two)
+  .then(log.intercept) // "two"
+  .then(data => {
+    // do something
+  })
+```
+### `.setLevel(level)`
+Set the minimum log level to output. If `NODE_ENV` set to **development** defaults to **debug**. Otherwise defaults to **info**
 
 ## Contributing
 
