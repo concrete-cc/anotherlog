@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/concrete-cc/anotherlog.svg?branch=master)](https://travis-ci.org/concrete-cc/anotherlog)
 
-Another Node.js logging module. It wraps Winston and provides a preconfigured standardised logger for use in our microservices and other projects. Adds a few useful features as well
+Another Node.js logging module. For now this wraps Winston and provides a preconfigured standardised logger for use in our microservices and other projects.
 
 ## Getting started
 
@@ -12,15 +12,10 @@ First, install anotherlog using npm:
 ```
 Then, require the package and use it like so:
 ```js
-    const log = require('anotherlog')
+    const log = require('anotherlog')('MyService')
     
-    log.setName('MyService')
     log.info('Hello World')
-    // returns '09089123812 [INFO] (MyService) Hello Small World'
-    // 
-    const localLog = log.getInstance('MyLocalLog')
-    localLog.warn('Hello Small World')
-    // returns '09089123812 [WARN] (MyService:MyLocalLog) Hello Small World'
+    // '2017-06-12T16:16:09.222Z (MyService) [INFO] - Hello Small World'
 ```
 ## API
 ### `anotherlog(name, options={level})`
