@@ -3,14 +3,17 @@ const chalk = require('chalk')
 
 function anotherlog(name, options = {}) {
     if (!name) throw new Error('Logger must have a name!')
+
     const logger = new winston.Logger({
       transports: [
         new winston.transports.Console({
           level: options.level || (process.env.NODE_ENV === 'development') ? 'debug' : 'info',
+          json: options.json || !(process.env.NODE_ENV === 'development'),
+          stringify: options.stringify || !(process.env.NODE_ENV === 'development'),
           label: name,
-          formatter: consoleFormatter,
+          formatter: (process.env.NODE_ENV === 'development') ? consoleFormatter : undefined,
           handleExceptions: true,
-          humanReadableUnhandledException: true,
+          humanReadableUnhandledException: options.humanReadableUnhandledException || (process.env.NODE_ENV === 'development'),
         })
       ],
       exitOnError: false,
@@ -52,7 +55,7 @@ function formatLevel(level) {
 }
 
 function intercept(params) {
-  this.debug(params)
+  this.debug('intercept', params)
   return params
 }
 

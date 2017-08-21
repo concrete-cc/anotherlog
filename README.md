@@ -42,6 +42,9 @@ Promise.resolve({one: 'one', two: 'two'})
 ### `.setLevel(level)`
 Set the minimum log level to output. If `NODE_ENV` set to **development** defaults to **debug**. Otherwise defaults to **info**
 
+## Notes
+`NODE_ENV=development` will change the output emitted by this library. In development mode a warning is printed to the screen and messages are logged in a human readable format. When running in production all messages are logged as machine readable JSON.
+
 ## Contributing
 
 To report bugs or request features, submit issues here on GitHub, [concrete-cc/anotherlog/issues](https://github.com/concrete-cc/anotherlog/issues). Pull requests are also welcome.
