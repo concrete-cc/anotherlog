@@ -1,6 +1,6 @@
 {
   "name": "anotherlog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Another Node.js logger. Wraps Winston.",
   "main": "index.js",
   "author": {
