@@ -16,6 +16,9 @@ function anotherlog(name, options = {}) {
       exitOnError: false,
     })
     logger.intercept = intercept.bind(logger)
+    if (process.env.NODE_ENV === 'development') {
+      logger.warn('!! Running in development mode !!'.toUpperCase())
+    }
     return logger
 }
 
