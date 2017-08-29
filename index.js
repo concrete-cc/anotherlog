@@ -7,13 +7,13 @@ function anotherlog(name, options = {}) {
     const logger = new winston.Logger({
       transports: [
         new winston.transports.Console({
-          level: options.level || (process.env.NODE_ENV === 'development') ? 'debug' : 'info',
-          json: options.json || !(process.env.NODE_ENV === 'development'),
-          stringify: options.stringify || !(process.env.NODE_ENV === 'development'),
+          level: options.level || (process.env.NODE_ENV === 'production') ? 'info' : 'debug',
+          json: options.json || (process.env.NODE_ENV === 'production'),
+          stringify: options.stringify || (process.env.NODE_ENV === 'production'),
           label: name,
-          formatter: (process.env.NODE_ENV === 'development') ? consoleFormatter : undefined,
+          formatter: (process.env.NODE_ENV === 'production') ? undefined : consoleFormatter,
           handleExceptions: true,
-          humanReadableUnhandledException: options.humanReadableUnhandledException || (process.env.NODE_ENV === 'development'),
+          humanReadableUnhandledException: options.humanReadableUnhandledException || (process.env.NODE_ENV === 'production'),
         })
       ],
       exitOnError: false,
